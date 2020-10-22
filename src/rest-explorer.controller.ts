@@ -35,7 +35,7 @@ export class ExplorerController {
 
   constructor(
     @inject(RestBindings.CONFIG, {optional: true})
-    restConfig: RestServerConfig = {},
+    restConfig: any = {},
     @config({fromBinding: RestExplorerBindings.COMPONENT})
     explorerConfig: RestExplorerConfig = {},
     @inject(RestBindings.BASE_PATH) private serverBasePath: string,
@@ -94,7 +94,7 @@ export class ExplorerController {
       .send(homePage);
   }
 
-  spec() {
+  spec():Promise<any> {
     return this.restServer.getApiSpec(this.requestContext);
   }
 

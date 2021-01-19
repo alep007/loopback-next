@@ -10,9 +10,9 @@
   "scripts": {
     "build": "lb-tsc",
     "clean": "lb-clean loopback-explorer*.tgz dist *.tsbuildinfo package",
-    "pretest": "npm run build",
+    "pretest": "pnpm run build",
     "test": "lb-mocha \"dist/__tests__/**/*.js\"",
-    "verify": "npm pack && tar xf loopback-explorer*.tgz && tree package && npm run clean"
+    "verify": "pnpm pack && tar xf loopback-explorer*.tgz && tree package && pnpm run clean"
   },
   "author": "IBM Corp.",
   "copyright.owner": "IBM Corp.",
